@@ -336,7 +336,7 @@ Info.prototype={
 		return this;
 	},
 	changeGroupChecked: function(state){
-		let data = this.getData();
+		let data = this.getChecked();
 		data.forEach((item)=>{
 			item.checked = state;
 		});
@@ -349,13 +349,14 @@ Info.prototype={
 		return this;
 	},
 	changeState: function(id,state){
+		let data = this.getChecked();
 		this.data.forEach((item)=>{
 			id == item.id?item.state = state:""
 		});
 		return this;
 	},
 	changeGroupState: function(state){
-		this.getData().forEach((item)=>{
+		this.getChecked().forEach((item)=>{
 			item.state = state;
 		});
 		return this;
